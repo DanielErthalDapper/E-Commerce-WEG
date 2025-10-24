@@ -1,0 +1,127 @@
+package ProjetoBase;
+
+public class Usuario
+{
+    //ATRIBUTOS
+    private String nome;
+    private String senha;
+    private String email;
+    private String cpf;
+
+    //CONSTRUTOR DE USUÁRIO
+    public Usuario(String nome, String senha, String email, String cpf)
+    {
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+        this.cpf = cpf;
+    }
+    //GETTERS DE NOME/LOGIN/SENHA/EMAIL/CPF
+    public String getNome()
+    {
+        return nome;
+    }
+    public String getSenha()
+    {
+        return senha;
+    }
+    public String getEmail()
+    {
+        return email;
+    }
+    public String getCpf()
+    {
+        return cpf;
+    }
+    //SETTERS DE NOME/LOGIN/SENHA/EMAIL/CPF
+    public void setNome(String nome)
+    {
+        this.nome = nome;
+    }
+    public void setSenha(String senha)
+    {
+        this.senha = senha;
+    }
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+    public void setCpf(String cpf)
+    {
+        this.cpf = cpf;
+    }
+
+    //VALIDAÇÕES
+    public static void validacaoDeNome(String nome)
+    {
+        if(nome.isBlank())
+        {
+            throw new IllegalArgumentException("ERRO! O NOME NÃO PODE SER VAZIO");
+        }
+
+        boolean contemEspecial = false;
+        for(String caracterEspecial : Ferramentas.listaEspeciais)
+        {
+            if(nome.contains(caracterEspecial))
+            {
+                contemEspecial = true;
+            }
+        }
+        if(contemEspecial)
+        {
+            throw new IllegalArgumentException("ERRO! A NOME NÃO DEVE CONTER CARACTERES ESPECIAIS");
+        }
+    }
+
+    public static void validacaoDeSenha(String senha)
+    {
+        if(senha.isBlank())
+        {
+            throw new IllegalArgumentException("ERRO! A SENHA NÃO PODE SER VAZIA");
+        }
+
+        if(senha.length() < 10)
+        {
+            throw new IllegalArgumentException("ERRO! A SENHA NÃO PODE TER MENOS DE 10 CARACTERES");
+        }
+
+        boolean contemEspecial = false;
+        for(String caracterEspecial : Ferramentas.listaEspeciais)
+        {
+            if(senha.contains(caracterEspecial))
+            {
+                contemEspecial = true;
+            }
+        }
+        if(!contemEspecial)
+        {
+            throw new IllegalArgumentException("ERRO! A SENHA DEVE CONTER CARACTERES ESPECIAIS");
+        }
+
+        boolean contemMaiuscula = false;
+        for(String letraMaiuscula : Ferramentas.listaMaiusculos)
+        {
+            if(senha.contains(letraMaiuscula))
+            {
+                contemMaiuscula = true;
+            }
+        }
+        if(!contemMaiuscula)
+        {
+            throw new IllegalArgumentException("ERRO! A SENHA DEVE CONTER LETRAS MAIÚSCULAS");
+        }
+    }
+
+    public static void validacaoDeCPF(String cpf)
+    {
+        if(cpf.isBlank())
+        {
+            throw new IllegalArgumentException("");
+        }
+
+        if(cpf.length() != 11)
+        {
+            throw new IllegalArgumentException("");
+        }
+    }
+}
