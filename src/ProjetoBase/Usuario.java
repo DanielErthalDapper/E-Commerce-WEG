@@ -110,18 +110,55 @@ public class Usuario
         {
             throw new IllegalArgumentException("ERRO! A SENHA DEVE CONTER LETRAS MAIÚSCULAS");
         }
+
+        boolean contemNumero = false;
+        for(String numero : Ferramentas.listaNumeros)
+        {
+            if(senha.contains(numero));
+            contemNumero = true;
+        }
+        if(!contemNumero)
+        {
+            throw new IllegalArgumentException("ERRO! A SENHA DEVE CONTER NÚMERO");
+        }
     }
 
     public static void validacaoDeCPF(String cpf)
     {
         if(cpf.isBlank())
         {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException("ERRO! O CPF NÃO PODE SER VAZIO");
         }
 
         if(cpf.length() != 11)
         {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException("ERRO! O CPF PRECISA TER 11 DIGITOS");
+        }
+
+        boolean contemMaiuscula = false;
+        for(String letraMaiuscula : Ferramentas.listaMaiusculos)
+        {
+            if(cpf.contains(letraMaiuscula))
+            {
+                contemMaiuscula = true;
+            }
+        }
+        if(!contemMaiuscula)
+        {
+            throw new IllegalArgumentException("ERRO! O CPF NÃO PODE CONTER LETRAS");
+        }
+
+        boolean contemCaracter = false;
+        for(String caracterEspecial : Ferramentas.listaEspeciais)
+        {
+            if(cpf.contains(caracterEspecial))
+            {
+                contemCaracter = true;
+            }
+        }
+        if(contemCaracter)
+        {
+            throw new IllegalArgumentException("ERRO! O CPF NÃO PODE CONTER CARACTER ESPECIAL");
         }
     }
 }
