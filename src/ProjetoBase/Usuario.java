@@ -1,6 +1,6 @@
 package ProjetoBase;
 
-public class Usuario
+public class  Usuario
 {
     //ATRIBUTOS
     private String nome;
