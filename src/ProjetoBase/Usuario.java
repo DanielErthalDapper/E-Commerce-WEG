@@ -1,6 +1,6 @@
 package ProjetoBase;
 
-public class  Usuario
+public abstract class Usuario
 {
     //ATRIBUTOS
     private String nome;
@@ -15,6 +15,8 @@ public class  Usuario
         this.senha = senha;
         this.email = email;
         this.cpf = cpf;
+
+        ListaUsuarios.usuarios.add(this);
     }
     //GETTERS DE NOME/LOGIN/SENHA/EMAIL/CPF
     public String getNome()

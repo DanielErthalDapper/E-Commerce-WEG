@@ -10,6 +10,8 @@ public class Produto_Eletronico extends Produto
     {
         super(nome, preco, estoque);
         this.garantiaEmMeses = garantiaEmMeses;
+
+        ListaProdutos.produtos.add(this);
     }
 
     //GETTER

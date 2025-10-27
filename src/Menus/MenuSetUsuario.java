@@ -8,11 +8,12 @@ public class MenuSetUsuario
     public static String menuSetNome()
     {
         boolean verifica = false;
+        String nome = " ";
 
         while(!verifica)
         {
             System.out.println("Digite seu nome: ");
-            String nome = Ferramentas.lString();
+            nome = Ferramentas.lString();
 
             try
             {
@@ -24,17 +25,18 @@ public class MenuSetUsuario
                 Ferramentas.mensagemErro(e.getMessage());
             }
         }
-        return " ";
+        return nome;
     }
 
     public static String menuSetCPF()
     {
         boolean verifica = false;
+        String cpf = " ";
 
         while(!verifica)
         {
             System.out.println("Digite seu CPF: ");
-            String cpf = Ferramentas.lString();
+            cpf = Ferramentas.lString();
 
             try
             {
@@ -46,17 +48,18 @@ public class MenuSetUsuario
                 Ferramentas.mensagemErro(e.getMessage());
             }
         }
-        return " ";
+        return cpf;
     }
 
     public static String menuSetEmail()
     {
         boolean verifica = false;
+        String email = " ";
 
         while(!verifica)
         {
             System.out.println("Digite seu email: ");
-            String email = Ferramentas.lString();
+            email = Ferramentas.lString();
 
             try
             {
@@ -68,19 +71,21 @@ public class MenuSetUsuario
                 Ferramentas.mensagemErro(e.getMessage());
             }
         }
-        return " ";
+        return email;
     }
 
     public static String menuSetSenha()
     {
         boolean verifica = false;
+        String senha = " ";
+        String senhaConfirmacao = " ";
 
         while(!verifica)
         {
             System.out.println("Crie uma senha: ");
-            String senha = Ferramentas.lString();
+            senha = Ferramentas.lString();
             System.out.println("Confirme sua senha: ");
-            String senhaConfirmacao = Ferramentas.lString();
+            senhaConfirmacao = Ferramentas.lString();
 
             try
             {
@@ -92,6 +97,6 @@ public class MenuSetUsuario
                 Ferramentas.mensagemErro(e.getMessage());
             }
         }
-        return " ";
+        return senha;
     }
 }

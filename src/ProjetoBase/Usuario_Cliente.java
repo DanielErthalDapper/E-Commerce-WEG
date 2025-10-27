@@ -6,15 +6,17 @@ import java.util.List;
 public class Usuario_Cliente extends Usuario
 {
     //ATRIBUTOS
-    private static List<Pedidos> historicoDeCompras;
+    private static List<Pedidos> historicoDeCompras = new ArrayList<>();
     private String endereco;
 
     //CONSTRUTOR
-    public Usuario_Cliente(String nome, String senha, String email, String cpf, List historicoDeCompras, String endereco)
+    public Usuario_Cliente(String nome, String senha, String email, String cpf, String endereco)
     {
         super(nome, senha, email, cpf);
         this.historicoDeCompras = historicoDeCompras;
         this.endereco = endereco;
+
+        ListaUsuarios.usuarios.add(this);
     }
 
     //MEÉTODOS DE REALIZAR COMPRAS E CONSULTAR HISTÓRICO

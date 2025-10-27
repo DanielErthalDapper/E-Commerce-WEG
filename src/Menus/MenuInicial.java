@@ -38,7 +38,7 @@ public class MenuInicial
             {
                 case 1:
                 {
-                    MenuCadastro.cadastrar();
+                    MenuCadastroCliente.cadastrar();
                     break;
                 }
                 case 2:

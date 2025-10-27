@@ -10,7 +10,10 @@ public class Produto_VestuarioTecnico extends Produto
     {
         super(nome, preco, estoque);
         this.tamanho = tamanho;
+
+        ListaProdutos.produtos.add(this);
     }
+
 
     //GETTER
     public String getTamanho()
@@ -18,11 +21,13 @@ public class Produto_VestuarioTecnico extends Produto
         return tamanho;
     }
 
+
     //SETTER
     public void setTamanho(String tamanho)
     {
         this.tamanho = tamanho;
     }
+
 
     //VALIDAÇÕES
     public static void validarProdutoVestuario(String tamanho)

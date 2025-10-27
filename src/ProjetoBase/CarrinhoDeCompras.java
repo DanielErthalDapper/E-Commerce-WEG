@@ -1,4 +1,5 @@
 package ProjetoBase;
 
-public class CarrinhoDeCompras {
+public class CarrinhoDeCompras
+{
 }
