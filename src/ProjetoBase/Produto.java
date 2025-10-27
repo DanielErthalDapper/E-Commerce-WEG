@@ -1,6 +1,6 @@
 package ProjetoBase;
 
-public class Produto
+public abstract class Produto
 {
     //ATRIBUTOS
     private String nome;

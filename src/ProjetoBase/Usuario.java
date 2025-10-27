@@ -73,18 +73,20 @@ public class  Usuario
         }
     }
 
-    public static void validacaoDeSenha(String senha)
+    public static void validacaoDeSenha(String senha, String senhaConfirmacao)
     {
         if(senha.isBlank())
         {
             throw new IllegalArgumentException("ERRO! A SENHA NÃO PODE SER VAZIA");
         }
-
+        if(!senha.equals(senhaConfirmacao))
+        {
+            throw new IllegalArgumentException("ERRO! AS SENHAS PRECISÃO SER IGUAIS");
+        }
         if(senha.length() < 10)
         {
             throw new IllegalArgumentException("ERRO! A SENHA NÃO PODE TER MENOS DE 10 CARACTERES");
         }
-
         boolean contemEspecial = false;
         for(String caracterEspecial : Ferramentas.listaEspeciais)
         {
@@ -110,7 +112,6 @@ public class  Usuario
         {
             throw new IllegalArgumentException("ERRO! A SENHA DEVE CONTER LETRAS MAIÚSCULAS");
         }
-
         boolean contemNumero = false;
         for(String numero : Ferramentas.listaNumeros)
         {
@@ -143,7 +144,7 @@ public class  Usuario
                 contemMaiuscula = true;
             }
         }
-        if(!contemMaiuscula)
+        if(contemMaiuscula)
         {
             throw new IllegalArgumentException("ERRO! O CPF NÃO PODE CONTER LETRAS");
         }
@@ -159,6 +160,21 @@ public class  Usuario
         if(contemCaracter)
         {
             throw new IllegalArgumentException("ERRO! O CPF NÃO PODE CONTER CARACTER ESPECIAL");
+        }
+    }
+    public static void validacaoDeEmail(String email)
+    {
+        if(email.isBlank())
+        {
+            throw new IllegalArgumentException("ERRO! O EMAIL NÃO PODE SER VAZIO!");
+        }
+        if(!email.contains("@"))
+        {
+            throw new IllegalArgumentException("ERRO! O EMAIL PRECISA CONTER O CARACTER @");
+        }
+        if(!email.contains("gmail.com"))
+        {
+            throw new IllegalArgumentException("ERRO! O EMAIL PRECISA CONTER O 'gmail.com'");
         }
     }
 }

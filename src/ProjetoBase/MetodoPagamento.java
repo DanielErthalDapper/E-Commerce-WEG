@@ -1,4 +1,6 @@
 package ProjetoBase;
 
-public class MetodoPagamento {
+interface MetodoPagamento
+{
+    void processarPagamento(double valor);
 }

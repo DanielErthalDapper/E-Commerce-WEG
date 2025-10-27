@@ -60,5 +60,14 @@ public class Pedidos
         return status;
     }
 
-    //VALIDAÇÕES
+    public void exibirNotaFiscal()
+    {
+        System.out.println("|==============================|");
+        System.out.println("Item: "+item);
+        System.out.println("Valor Total: "+valorTotal);
+        System.out.println("Endereço: "+endereco);
+        System.out.println("Status: "+status);
+        System.out.println("|==============================|");
+
+    }
 }

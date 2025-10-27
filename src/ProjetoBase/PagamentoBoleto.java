@@ -1,4 +1,9 @@
 package ProjetoBase;
 
-public class PagamentoBoleto {
+public class PagamentoBoleto implements MetodoPagamento
+{
+    public void processarPagamento(double valor)
+    {
+
+    }
 }
